@@ -1,0 +1,53 @@
+/**
+ * @file
+ * File СSS fof description id, classes, and others.
+ */
+
+body, 
+html {
+	padding: 0;
+  	margin: 0;
+}
+#content {
+	border: 1px solid blue;
+	margin: 50px auto;
+	width: 500px;
+}
+.login {
+	border: 1px solid blue;
+	margin: auto;
+	width: 200px;
+	float: left; 
+}	
+.news {
+	border-bottom: 1px solid black;
+	margin: 35px 0;
+	width: 100%;
+}
+.news .author {
+	font-weight: bold;
+	padding: 0 5px;
+	}
+.news .date {
+	font-style: italic;
+	padding: 0 5px;
+}
+.error {
+    color: red; 
+}
+.text1 {
+	text-align: left;
+}
+.text2 {
+	text-align: right;
+}
+input {
+	display: block;
+}
+textarea {
+	border: 1px solid blue;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
