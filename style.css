@@ -10,8 +10,19 @@ html {
 }
 #content {
 	border: 1px solid blue;
-	margin: 50px auto;
+	margin: 50px auto 5px;
 	width: 500px;
+}
+.comment {
+	border: 1px solid blue;
+	margin: auto;
+	width: 400px;
+}
+.mark1{
+	border-bottom: 1px solid black;
+}
+.mark {
+	display: inline
 }
 .login {
 	border: 1px solid blue;

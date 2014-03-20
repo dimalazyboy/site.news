@@ -10,7 +10,6 @@ require 'logout.inc.php';
 require 'func.inc.php';
 if (isset($_GET['id'])) {
 	$id=$_GET['id'];
-	
 } 
 else {
 	header ("Location: index.php");
@@ -18,17 +17,34 @@ else {
 if (!$truelogin) {
 	header ('Location: index.php'); 
 }
+if ($language == 'en') {
+	$word = take_lang_eng();
+}
+else {
+	$word = take_lang_ukr();
+}
 $error = ''; 
 if (isset($_POST['action'])) { 
 	if (empty($_POST['msg'])) {
-	  $error .= $lang['err_msg'] . '<br>';
+	  $error .= $word[42][0] . '<br>';
 	}
-	if(!$error) {
-		require 'upd_news.inc.php';	
-		header ("Location: news_look.php?id=$id"); 
-	} 
+		if(!$error) {
+			if ($language == 'en') {
+			require 'upd_news_eng.inc.php';
+			header ("Location: news_look.php?id=$id");
+			}
+			else {
+			require 'upd_news_ukr.inc.php';
+			header ("Location: news_look.php?id=$id"); 
+			} 
+		}
 }
-$row = take_read_more($id);
+if ($language == 'en') {
+$row = take_read_more_eng($id);
+}
+else {
+$row = take_read_more_ukr($id);
+}
 if (!$row) {
   header ("Location: index.php");
 }
@@ -37,26 +53,26 @@ if (!$row) {
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><?php echo $lang['add_news']; ?></title>
+		<title><?php echo $word[43][0]; ?></title>
 		<meta charset='UTF-8'>
 		<link rel='stylesheet' href='style.css'>
 	</head>
 	<body> 
-		<?php echo $lang['welcome']; ?>:<?php echo $login; ?><br>
-	<a link='#0000ff'  href='index.php'><?php echo $lang['main']; ?></a> 
-	<a link='#0000ff'  href='index.php?logout=1'><?php echo $lang['logout']; ?></a> 
+		<?php echo $word[1][0]; ?>:<?php echo $login; ?><br>
+	<a link='#0000ff'  href='index.php'><?php echo $word[16][0]; ?></a> 
+	<a link='#0000ff'  href='index.php?logout=1'><?php echo $word[0][0]; ?></a> 
 		<div id='content'>
 			<form method='post' action=''>
 				<p class='error'>
 					<?php 
 						if ($error) {
-						echo $lang['err_msg'];
+						echo $error;
 						}
 			  	?>
 			  </p>
-			  <input size ='50px' type='text' value='<?php echo stripslashes($row['title']); ?>' name='title' placeholder='<?php echo $lang['plc_title']?>'>
+			  <input size ='50px' type='text' value='<?php echo stripslashes($row['title']); ?>' name='title' placeholder='<?php echo $word[8][0]; ?>'>
 				<textarea name='msg'  rows='20'><?php echo stripslashes($row['msg']); ?></textarea>
-				<button type='submit' name='action'><?php echo $lang['btn_add_news']; ?></button>
+				<button type='submit' name='action'><?php echo $word[18][0]; ?></button>
 			</form>
 		</div>
 	</body>

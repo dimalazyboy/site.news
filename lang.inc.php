@@ -13,7 +13,6 @@ if(isset($_SESSION['language'])) {
 	$language=$_SESSION['language'];
 }
 switch ($language) {
-	case 'ru' : include('ru.php'); break;
 	case 'ua' : include('ua.php'); break;
 	default : include('en.php'); break;
 } 

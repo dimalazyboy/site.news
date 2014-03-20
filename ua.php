@@ -6,7 +6,7 @@
  */
 
 //
-	$lang['title'] = 'Новини';
+	$lang['site_title'] = 'Новини';
 // index.php
 	$lang['login'] = 'Вхід';
 	$lang['logout'] = 'Вихід';
@@ -23,6 +23,9 @@
 	$lang['news_option'] = 'Опції новин';
 	$lang['pages'] = 'Сторінки';
 	$lang['ban'] = 'Ваш акаунт забанений';
+	$lang['author'] = 'Автор';
+	$lang['date'] = 'Дата';
+	$lang['title'] = 'Заголовок';
 // login.php
 	$lang['err_login'] = 'Введіть логін';
 	$lang['err_pass'] = 'Введіть пароль';
@@ -38,9 +41,14 @@
 	$lang['plc_email'] = 'Емайл';
 	$lang['btn_confirm'] = 'Зареєструватись';
 // add_news.php
-	$lang['err_msg'] = 'Введіть повідомлення';
+	$lang['err_msg_ukr'] = 'Введіть повідомлення українською ';
+	$lang['err_msg_eng'] = 'Введіть повідомлення англійською';
+	$lang['err_title_ukr'] = 'Введіть заголовок українською';
+	$lang['err_title_eng'] = 'Введіть заголовок англійською';
 	$lang['btn_add_news'] = 'Додати новину';
 	$lang['plc_title'] = 'Заголовок';
+	$lang['add_ukr'] = 'Додати новину на українській';
+	$lang['add_eng'] = 'Додати новину на англійській';
 // login.inc.php
 	$lang['err_login'] = 'Неправильний логін або пароль';
 // news_delete.php

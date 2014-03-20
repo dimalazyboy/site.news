@@ -3,7 +3,12 @@ require 'lang.inc.php';
 require 'db.inc.php'; 
 require 'func.inc.php'; 
 require 'logout.inc.php';
-
+if ($language == 'en') {
+	$word = take_lang_eng();
+}
+else {
+	$word = take_lang_ukr();
+}
 if (isset($_GET['logout'])) { 
 	unset ($_SESSION['login']); 
 	header ('Location: index.php');  
@@ -26,40 +31,24 @@ $profile = take_all_profiles();
 <!DOCTYPE html>
 <html>
 	<head>
-  	<title><?php echo $lang['title']; ?></title>
+  	<title><?php echo $word[4][0]; ?></title>
   	<meta charset='UTF-8'>
   	<link rel='stylesheet' href='style.css'>
 	</head>
 	<body>
-		<a link='#0000ff'  href='index.php'><?php echo $lang['main']; ?></a><br>
+		<a link='#0000ff' href='index.php'><?php echo $word[16][0]; ?></a><br>
     <?php
 			if ($truelogin) { 
 		?>
-	  	<?php echo $lang['welcome']; ?>:<a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
-	  	<a link='#0000ff' href='index.php?logout'><?php echo $lang['logout']; ?></a> 
-			<a link='#0000ff'  style='float:right' href='add_news.php'><?php echo $lang['add_news']; ?></a><br>
-			<a link='#0000ff'  style='float:right' href='profile.php?id=<?php echo $id; ?>'><?php echo $lang['my_profile']; ?></a>
+	  	<?php echo $word[1][0]; ?>:<a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
+	  	<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a> 
+			<a link='#0000ff' style='float:right' href='profile.php?id=<?php echo $id; ?>'><?php echo $word[2][0]; ?></a>
 		<?php
 	  }
 			else {
 		?>
 			<div class='text1'>
-    		<a  link='#0000ff'  href='registration.php'><?php echo $lang['reg']; ?></a>
-     	</div>	
-    	<div class='login'>
-					<form method='post' action=''>
-						<p class='error'>
-							<?php
-						 		if ($error) {
-								echo $error; 
-							}
-							?>
-						</p>
-						<input type='text' name='login' placeholder='<?php echo $lang['plc_login']; ?>'>
-						<input type='password' name='password' placeholder='<?php echo $lang['plc_pass']; ?>'>
-						<button type='submit' name='action'><?php echo $lang['btn_login']; ?></button>
-					</form>
-				</div>
+    		<a link='#0000ff' href='registration.php'><?php echo $word[5][0]; ?></a>
 		<?php
 	    }
     ?>
@@ -68,20 +57,20 @@ $profile = take_all_profiles();
     		foreach ($profile as $row) {
 			?>
 	    <div class='news'>
-	    	<p><?php echo $lang['avatar']; ?>:</p><img src='img/<?php echo $row['avatar']; ?>.jpg' width="150" height="150" />
+	    	<p><?php echo $word[31][0]; ?>:</p><img src='img/<?php echo $row['avatar']; ?>.jpg' width="150" height="150" />
 	    	<?php 
 				if ($role !== 'guest' ) {
 				?>
-	  		<p><?php echo $lang['plc_email']; ?>:<?php echo $row['email']; ?></p>
+	  		<p><?php echo $word[17][0]; ?>:<?php echo $row['email']; ?></p>
 	  		<?php
 	  		}
 	  		?>
-	  		<p><?php echo $lang['plc_surname']; ?>:<?php echo $row['surname']; ?></p>
-				<p><?php echo $lang['plc_name']; ?>:<?php echo $row['name']; ?></p>
-				<p><?php echo $lang['date_reg']; ?>:<?php echo $row['date_reg']; ?></p>
-				<p><?php echo $lang['date_log']; ?>:<?php echo $row['date_log']; ?></p>
-				<p><?php echo $lang['role']; ?>:<?php echo $row['role']; ?></p>
-				<a  link='#0000ff'  href='profile_edit.php?id=<?php echo $row['id']; ?>'><?php echo $lang['edit_profile']; ?></a>
+	  		<p><?php echo $word[32][0]; ?>:<?php echo $row['surname']; ?></p>
+				<p><?php echo $word[33][0]; ?>:<?php echo $row['name']; ?></p>
+				<p><?php echo $word[34][0]; ?>:<?php echo $row['date_reg']; ?></p>
+				<p><?php echo $word[35][0]; ?>:<?php echo $row['date_log']; ?></p>
+				<p><?php echo $word[36][0]; ?>:<?php echo $row['role']; ?></p>
+				<a link='#0000ff' href='profile_edit.php?id=<?php echo $row['id']; ?>'><?php echo $word[37][0]; ?></a>
 			</div>	
     		<?php
  					}	 	

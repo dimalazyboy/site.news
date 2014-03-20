@@ -6,7 +6,7 @@
  */
 
 // Site name
-	$lang['title'] = 'News';
+	$lang['site_title'] = 'News';
 // index.php
 	$lang['login'] = 'Login';
 	$lang['logout'] = 'Logout';
@@ -23,6 +23,9 @@
 	$lang['news_option'] = 'News option';
 	$lang['pages'] = 'Pages';
 	$lang['ban'] = 'Your account has banned';
+	$lang['author'] = 'Author';
+	$lang['date'] = 'Date';
+	$lang['title'] = 'Title';
 // login.php
 	$lang['err_login'] = 'Enter login';
 	$lang['err_pass'] = 'Enter passsword';
@@ -38,9 +41,14 @@
 	$lang['plc_email'] = 'Email';
 	$lang['btn_confirm'] = 'Confirm registration';
 // add_news.php
-	$lang['err_msg'] = 'Enter message';
+	$lang['err_msg_ukr'] = 'Enter message at ukrainian ';
+	$lang['err_msg_eng'] = 'Enter message at english';
+	$lang['err_title_ukr'] = 'Enter title at ukrainian';
+	$lang['err_title_eng'] = 'Enter title at english';
 	$lang['btn_add_news'] = 'Add news';
 	$lang['plc_title'] = 'Title';
+	$lang['add_ukr'] = 'Add news at ukrainian';
+	$lang['add_eng'] = 'Add news at english';
 // login.inc.php
 	$lang['err_login'] = 'Bad login or password';
 // news_delete.php
