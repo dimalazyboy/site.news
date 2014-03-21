@@ -70,36 +70,34 @@ $page = 0;
 			if ($role=="ban") {
 		?>
 		<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a><br>
+		<span><?php echo $word[21][0]; exit; ?><span>
 		<?php
-				echo $word[21][0]; exit;
 			}
 		}	
 		?>
-			<div class='text2'>
-			<a link='#0000ff' href='index.php?lang=ua'><img src="img/Flag_of_Ukraine.png" width="50" height="25"></a> 
-			<a link='#0000ff' href='index.php?lang=en'><img src="img/Flag_of_the_United_Kingdom.png" width="50" height="25"></a>
-		</div>
+			<a link='#0000ff' style='float:right; margin:4px;' href='index.php?lang=ua'><img src="img/Flag_of_Ukraine.png" width="50" height="25"></a> 
+			<a link='#0000ff' style='float:right; margin:4px;'href='index.php?lang=en'><img src="img/Flag_of_the_United_Kingdom.png" width="50" height="25"></a>
     <?php
 			if ($truelogin and (!$error)) { 
 				if ($role =='user') {
 		?>
-	  	 		<?php echo $word[1][0]; ?>:<a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
-	  			<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a> 
+	  	 		<span><?php echo $word[1][0]; ?>:</span><a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
+	  			<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a><br> 
 					<a link='#0000ff' style='float:right' href='profile.php?id=<?php echo $id; ?>'><?php echo $word[2][0]; ?></a><br>
 		<?php
 	  		}
 	   		if ($role =='editor'){
 	  ?> 	
-	  		<?php echo $word[1][0]; ?>:<a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
-	  		<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a> 
+	  		<span><?php echo $word[1][0]; ?>:</span><a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
+	  		<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a><br> 
 	 			<a link='#0000ff' style='float:right' href='add_news.php'><?php echo $word[3][0]; ?></a><br>
 				<a link='#0000ff' style='float:right' href='profile.php?id=<?php echo $id; ?>'><?php echo $word[2][0]; ?></a><br>
 		<?php 
 		 		}
 	   		if ($role == 'admin') {
 		?>
-	  	  <?php echo $word[1][0]; ?>:<a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
-	  		<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a> 
+	  	  <span><?php echo $word[1][0]; ?>:</span><a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
+	  		<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a><br>
 	  		<a link='#0000ff' style='float:right' href='add_news.php'><?php echo $word[3][0]; ?></a><br>
 				<a link='#0000ff' style='float:right' href='profile.php?id=<?php echo $id; ?>'><?php echo $word[2][0]; ?></a><br>
 				<a link='#0000ff' style='float:right' href='all_profiles.php'><?php echo $word[4][0]; ?></a><br>
@@ -111,7 +109,7 @@ $page = 0;
 			else {
 		?>
 			<div class='text1'>
-    		<a  link='#0000ff' href='registration.php'><?php echo $word[5][0]; ?></a>
+    		<a link='#0000ff' href='registration.php'><?php echo $word[5][0]; ?></a>
      	</div>	
     	<div class='login'>
 					<form method='post' action=''>
@@ -137,11 +135,11 @@ $page = 0;
 	    <div class='news'>
 	  		<p class='author'><?php echo $word[6][0]; ?>:<a link='#0000ff' href='profile.php?id=<?php echo $row['id_author']; ?>'><?php echo $row['author']; ?></a></p>
 	  		<p class='date'><?php echo $word[7][0]; ?>:<?php echo $row['date']; ?></p>
-	  		<h3><?php echo $word[8][0]; ?>:<?php echo $row['title']; ?></h3>
+	  		<h3><?php echo $word[8][0]; ?>:<?php echo stripslashes($row['title']); ?></h3>
 				<p class='msg'>
 					<?php 
 						$maxlen = 150;
-						$string = $row['msg'];
+						$string = stripslashes($row['msg']);
 						echo cutString($string, $maxlen);
 	 					if (mb_strlen($string) > $maxlen) {
 	 				?>

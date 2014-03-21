@@ -53,11 +53,10 @@ if (isset($_POST['action'])) {
 		<a link='#0000ff' href='index.php?logout=1'><?php echo $word[0][0]; ?></a> 
 		<div id='content'>
 			<form method='post' action=''>
-			  <input size ='50px' type='text' value='<?php echo $res['title']; ?>' name='title' placeholder='<?php echo $word[8][0]; ?>'>
+			  <input style='padding:2px' size = '60px' type='text' value='<?php echo $res['title']; ?>' name='title' placeholder='<?php echo $word[8][0]; ?>'>
 				<textarea name='msg' rows='20'><?php echo $res['msg']; ?></textarea>
-				<button type='submit' name='action'><?php echo $word[18][0]; ?></button>
+				<button type='submit' name='action'><?php echo $word[61][0]; ?></button>
 			</form>
 		</div>
 	</body>
 </html>
-

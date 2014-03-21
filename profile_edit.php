@@ -64,8 +64,8 @@ $row = take_profile($id);
 		<link rel='stylesheet' href='style.css'>
 	</head>
 	<body> 
-		<?php echo $word[1][0]; ?>:<?php echo $login; ?><br>
-		<a link='#0000ff'  href='index.php'><?php echo $word[16][0]; ?></a> 
+		<span><?php echo $word[1][0]; ?>:</span><a><?php echo $login; ?></a><br>
+		<a link='#0000ff'  href='index.php'><?php echo $word[16][0]; ?></a><br>
 		<a link='#0000ff'  href='index.php?logout=1'><?php echo $word[0][0]; ?></a> 
 		<div id='content'>
 			<form method='post' action='' enctype="multipart/form-data">

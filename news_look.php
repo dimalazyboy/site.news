@@ -98,9 +98,7 @@ $rows = $rows[0];
 $num_pages = ceil($rows / $per_page);
 $page = 0;
 $all_marks = take_all_marks($id);
-echo $language. '<br>';
 $sum=0;
-
 foreach ($all_marks as $eachmark) {
 	$sum+=$eachmark['mark'];
 }
@@ -118,7 +116,7 @@ foreach ($all_marks as $eachmark) {
 		if ($truelogin) { 
 			if ($role =='user') {
 		?>
-	  		<?php echo $word[1][0]; ?>:<a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
+	  		<span><?php echo $word[1][0]; ?>:</span><a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
 	  		<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a><br> 
 	  		<a link='#0000ff'  href='index.php'><?php echo $word[16][0]; ?></a> 
 				<a link='#0000ff'  style='float:right' href='profile.php?id=<?php echo $id; ?>'><?php echo $word[2][0]; ?></a><br>
@@ -126,7 +124,7 @@ foreach ($all_marks as $eachmark) {
 	  		}
 	  	if ($role =='editor'){
 	  ?> 	
-	    <?php echo $word[1][0]; ?>:<a link='#0000ff' href='profile.php?id=<?php echo $id_login; ?>'><?php echo $login; ?></a><br>
+	    <span><?php echo $word[1][0]; ?>:</span><a link='#0000ff' href='profile.php?id=<?php echo $id_login; ?>'><?php echo $login; ?></a><br>
   		<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a><br>
   		<a link='#0000ff'  href='index.php'><?php echo $word[16][0]; ?></a> 
   	<?php 	
@@ -139,7 +137,7 @@ foreach ($all_marks as $eachmark) {
   		}
 			if ($role =='admin'){
 	  ?> 	
-  		<?php echo $word[1][0]; ?>:<a link='#0000ff' href='profile.php?id=<?php echo $id_login; ?>'><?php echo $login; ?></a><br>
+  		<span><?php echo $word[1][0]; ?>:</span><a link='#0000ff' href='profile.php?id=<?php echo $id_login; ?>'><?php echo $login; ?></a><br>
   		<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a><br>
   		<a link='#0000ff'  href='index.php'><?php echo $word[16][0]; ?></a> 
 			<a link='#0000ff'  style='float:right' href='news_edit.php?id=<?php echo $id; ?>'><?php echo $word[43][0]; ?></a><br>
@@ -150,7 +148,7 @@ foreach ($all_marks as $eachmark) {
 			else {
 		?>
 			<div class='text1'>
-    		<a  link='#0000ff'  href='registration.php'><?php echo $word[5][0]; ?></a><br>
+    		<a link='#0000ff'  href='registration.php'><?php echo $word[5][0]; ?></a><br>
     		<a link='#0000ff'  href='index.php'><?php echo $word[16][0]; ?></a> 
     	</div>	
     	<div class='login'>
@@ -174,7 +172,7 @@ foreach ($all_marks as $eachmark) {
 	    <div class='news'>
 	  		<p class='author'><?php echo $word[6][0]; ?>:<?php echo $row['author']; ?></p>
 	  		<p class='date'><?php echo $word[7][0]; ?>:<?php echo $row['date']; ?></p>
-	  		<h3><?php echo $word[8][0]; ?>:<?php echo $row['title']; ?></h3>
+	  		<h3><?php echo $word[8][0]; ?>:<?php echo stripslashes($row['title']); ?></h3>
 	  <?php
 	  		if (!empty($all_marks)) {
  		?>
@@ -188,7 +186,7 @@ foreach ($all_marks as $eachmark) {
 	  <?php
 	  	  }
 	  ?>	  
-				<p class='msg'><?php echo $row['msg']; ?></p>
+				<p class='msg'><?php echo stripslashes($row['msg']); ?></p>
 			</div>
  			<div>
  		<?php		
@@ -227,9 +225,9 @@ foreach ($all_marks as $eachmark) {
 						}
 						?>
 					</p>
-			  <input size = '50px' type = 'text' name = 'title_comm' placeholder = '<?php echo $word[8][0];?>'>
+			  <input style='padding:2px' size = '60px' type = 'text' name = 'title_comm' placeholder = '<?php echo $word[8][0];?>'>
 				<textarea name = 'msg_comm' rows = '20'></textarea>
-				<button type = 'submit' name = 'add_comm'><?php echo $word[18][0]; ?></button>
+				<button type = 'submit' name = 'add_comm'><?php echo $word[62][0]; ?></button>
 				</form>
 		<?php
 	    }

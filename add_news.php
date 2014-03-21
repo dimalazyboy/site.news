@@ -40,9 +40,9 @@
 		<link rel='stylesheet' href='style.css'>
 	</head>
 	<body> 
-		<?php echo $word[1][0]; ?>:<?php echo $login; ?><br>
-		<a link='#0000ff' href='index.php'><?php echo $word[16][0] ?></a> 
-		<a link='#0000ff' href='index.php?logout=1'><?php echo $word[0][0]; ?></a> 
+		<span><?php echo $word[1][0]; ?>:</span><a><?php echo $login; ?></a><br>
+		<a link='#0000ff' href='index.php?logout=1'><?php echo $word[0][0]; ?></a><br> 
+		<a link='#0000ff' href='index.php'><?php echo $word[16][0] ?></a><br> 
 		<div id='content'>
 			<form method='post' action=''>
 				<p><?php echo $word[23][0];?></p>
@@ -53,12 +53,12 @@
 						}
 			  	?>
 			  </p>
-			  <input size = '50px' type = 'text' name = 'title_ukr' placeholder = '<?php echo $word[8][0];?>'>
+			  <input style='padding:2px' size = '60px' type = 'text' name = 'title_ukr' placeholder = '<?php echo $word[8][0];?>'>
 				<textarea name = 'msg_ukr' rows = '20'></textarea>
 				<p><?php echo $word[24][0];?></p>
-			  <input size = '50px' type = 'text' name = 'title_eng' placeholder = '<?php echo $word[8][0];?>'>
+			  <input style='padding:2px' size = '60px' type = 'text' name = 'title_eng' placeholder = '<?php echo $word[8][0];?>'>
 				<textarea name = 'msg_eng' rows = '20'></textarea>
-				<button type = 'submit' name = 'action'><?php echo $word[18][0]; ?></button>
+				<button type = 'submit' name = 'action'><?php echo $word[62][0]; ?></button>
 			</form>
 		</div>
 	</body>

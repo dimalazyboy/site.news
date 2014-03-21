@@ -49,9 +49,9 @@ if (isset($_POST['action'])) {
 		<link rel='stylesheet' href='style.css'>
 	</head>
 	<body> 
-		<?php echo ($word[1][0]); ?>:<?php echo $login; ?><br>
-		<a link='#0000ff' href='index.php'><?php echo $word[16][0]; ?></a> 
-		<a link='#0000ff' href='index.php?logout=1'><?php echo $word[0][0]; ?></a> 
+		<span><?php echo ($word[1][0]); ?>:</span><a><?php echo $login; ?></a><br>
+		<a href='index.php?logout=1'><?php echo $word[0][0]; ?></a><br> 
+		<a href='index.php'><?php echo $word[16][0]; ?></a>
 		<div id='content'>
 			<form method='post' action=''>
 				<p><?php echo $word[28][0];?></p>
@@ -61,7 +61,7 @@ if (isset($_POST['action'])) {
 						echo $error;
 						}
 			 	?>
-			 </p>
+			  </p>
 			 <input size = '50px' type = 'text' name = 'lang_ukr' >
 				<p><?php echo $word[29][0];?></p>
 			 <input size = '50px' type = 'text' name = 'lang_eng' >

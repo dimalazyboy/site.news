@@ -36,22 +36,17 @@ $profile = take_all_profiles();
   	<link rel='stylesheet' href='style.css'>
 	</head>
 	<body>
-		<a link='#0000ff' href='index.php'><?php echo $word[16][0]; ?></a><br>
     <?php
-			if ($truelogin) { 
+			if ($role == 'admin') { 
 		?>
-	  	<?php echo $word[1][0]; ?>:<a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
-	  	<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a> 
+	  	<span><?php echo $word[1][0]; ?>:</span><a link='#0000ff' href='profile.php?id=<?php echo $id; ?>'><?php echo $login; ?></a><br>
+	  	<a link='#0000ff' href='index.php?logout'><?php echo $word[0][0]; ?></a><br> 
 			<a link='#0000ff' style='float:right' href='profile.php?id=<?php echo $id; ?>'><?php echo $word[2][0]; ?></a>
-		<?php
-	  }
-			else {
-		?>
-			<div class='text1'>
-    		<a link='#0000ff' href='registration.php'><?php echo $word[5][0]; ?></a>
+			<a link='#0000ff' href='index.php'><?php echo $word[16][0]; ?></a>
 		<?php
 	    }
-    ?>
+		?>
+
 		<div id='content'> 
     	<?php 
     		foreach ($profile as $row) {

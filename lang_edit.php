@@ -9,7 +9,7 @@
 require 'lang.inc.php';
 require 'func.inc.php';
 require 'db.inc.php';
-
+require 'logout.inc.php';
 
 if (isset($_SESSION['role'])) {
 	$role = $_SESSION['role'];	
@@ -56,6 +56,8 @@ if(isset($_POST['action'])) {
 		<link rel='stylesheet' href='style.css'>
 	</head>
 	<body>
+		<span><?php echo ($word[1][0]); ?>:</span><a><?php echo $login; ?></a><br>
+		<a href='index.php?logout=1'><?php echo $word[0][0]; ?></a><br>
 		<a link='#0000ff'  href='index.php'><?php echo $word[16][0]; ?></a> 
 		<div id='content'>
 			<form method='post' action=''>

@@ -1,42 +1,51 @@
 <?php
+require 'db.inc.php';
+require 'func.inc.php';
+require 'lang.inc.php';
+if ($language == 'en') {
+	$word = take_lang_eng();
+}
+else {
+	$word = take_lang_ukr();
+}
+?>
 
-	define('DB_LOGIN', 'root');
-	define('DB_PASSWORD', 'root');
-	// define('DB_PASSWORD', 'vertrigo');
-	 $db = new PDO( 'mysql:host=localhost;dbname=site_news',DB_LOGIN,DB_PASSWORD );
-	 $db->exec("SET CHARACTER SET 'utf8'");
-	 $db->exec("SET NAMES 'utf8'");
+<html>
+<head>
+<script language="JavaScript">
+<!-- Скрыть 
 
-if(isset($_POST['action'])){
-$login = $_POST['login'];
-$password = $_POST['password'];
+function test1(form) {
+  if (form.text1.value == "")
+    alert(<?php echo $word[19][0]; ?>)
+  else { 
+   alert("Hi "+form.text1.value+"! Форма заполнена корректно!");
+  }
 }
 
-function check_user_ban($login, $password) {
-	global $db;
-	$login = $db->quote($login);
-	$password = $db->quote($password);	
-  $result = $db->query("SELECT role FROM users WHERE login = $login AND password = $password");
-	$res = $result->fetch(PDO::FETCH_ASSOC);
-	  if ($res) {
-  	return $res;
-  	}
-  }	
+function test2(form) {
+  if (form.text2.value == "" || 
+      form.text2.value.indexOf('@', 0) == -1) 
+        alert(<?php echo $word[46][0]; ?>);
+  else alert("OK!");
+}
+// -->
+</script>
+</head>
+
+<body>
+<form name="first">
+Введите Ваше имя:<br>
+<input type="text" name="text1">
+<input type="button" name="button1" value="Проверка" onClick="test1(this.form)">
+<P>
+Введите Ваш адрес e-mail:<br>
+<input type="text" name="text2">
+<input type="button" name="button2" value="Проверка" onClick="test2(this.form)">
+</body>
+</html>
 
 
-
-
-$re = check_user_ban($login, $password);
-
-print_r ($login);
-print_r ($password);
-print_r ($re) ;
-?>
-					<form method='post' action=''>
-						<input type='text' name='login' placeholder='login'>
-						<input type='password' name='password' placeholder='password'>
-						<button type='submit' name='action'>ok</button>
-					</form>
 
 
 

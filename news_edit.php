@@ -70,7 +70,7 @@ if (!$row) {
 						}
 			  	?>
 			  </p>
-			  <input size ='50px' type='text' value='<?php echo stripslashes($row['title']); ?>' name='title' placeholder='<?php echo $word[8][0]; ?>'>
+			  <input style='padding:2px' size ='50px' type='text' value='<?php echo stripslashes($row['title']); ?>' name='title' placeholder='<?php echo $word[8][0]; ?>'>
 				<textarea name='msg'  rows='20'><?php echo stripslashes($row['msg']); ?></textarea>
 				<button type='submit' name='action'><?php echo $word[18][0]; ?></button>
 			</form>
